@@ -50,12 +50,12 @@ const SymptomChecker: React.FC = () => {
   
   const validatePostcode = () => {
     if (!postcode) {
-      setPostcodeError("Postcode is required");
+      setPostcodeError("Postcode or area is required");
       return false;
     }
     
     if (!isValidUKPostcode(postcode)) {
-      setPostcodeError("Please enter a valid UK postcode");
+      setPostcodeError("Please enter a valid UK postcode or area");
       return false;
     }
     
@@ -210,10 +210,10 @@ const SymptomChecker: React.FC = () => {
                 <h3 className="text-lg font-medium mb-4">Patient Location</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="postcode">Postcode</Label>
+                    <Label htmlFor="postcode">Postcode or Area</Label>
                     <Input
                       id="postcode"
-                      placeholder="e.g. ME7 5NY"
+                      placeholder="e.g. ME7 5NY or Canterbury"
                       value={postcode}
                       onChange={(e) => setPostcode(e.target.value)}
                     />
@@ -221,7 +221,7 @@ const SymptomChecker: React.FC = () => {
                       <p className="text-red-500 text-sm">{postcodeError}</p>
                     )}
                     <p className="text-sm text-muted-foreground">
-                      Enter the patient's postcode to find local services
+                      Enter the patient's postcode or area to find local services
                     </p>
                   </div>
                 </div>
