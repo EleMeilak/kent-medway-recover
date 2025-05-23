@@ -1,13 +1,9 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-
 const Index: React.FC = () => {
   const navigate = useNavigate();
-  
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="bg-gradient-to-b from-white to-gray-100 border-b">
         <div className="nhs-container py-16 px-4 sm:px-6 lg:px-8">
@@ -15,7 +11,7 @@ const Index: React.FC = () => {
             <div className="text-nhs-blue font-bold text-lg mb-2">
               Kent & Medway NHS
             </div>
-            <h1 className="nhs-heading-xl text-nhs-blue mb-6">
+            <h1 className="nhs-heading-xl mb-6 text-teal-600">
               Post COVID Assessment Service
             </h1>
             <p className="nhs-body max-w-3xl mx-auto text-gray-600 mb-8">
@@ -24,19 +20,10 @@ const Index: React.FC = () => {
               evidence-based recommendations and local service information.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button 
-                size="lg" 
-                className="bg-nhs-blue hover:bg-nhs-dark-blue text-lg"
-                onClick={() => navigate("/login")}
-              >
+              <Button size="lg" className="bg-nhs-blue hover:bg-nhs-dark-blue text-lg" onClick={() => navigate("/login")}>
                 Clinical Login
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => navigate("/about")}
-                className="border-nhs-blue text-nhs-blue hover:bg-nhs-blue/10"
-              >
+              <Button variant="outline" size="lg" onClick={() => navigate("/about")} className="border-nhs-blue text-nhs-blue hover:bg-nhs-blue/10">
                 Learn More
               </Button>
             </div>
@@ -114,11 +101,7 @@ const Index: React.FC = () => {
             <p className="text-white/80 mb-8 max-w-2xl mx-auto">
               Login with your NHS credentials to access the full clinical assessment platform
             </p>
-            <Button 
-              variant="secondary"
-              size="lg" 
-              onClick={() => navigate("/login")}
-            >
+            <Button variant="secondary" size="lg" onClick={() => navigate("/login")}>
               Access Clinical Portal
             </Button>
           </div>
@@ -176,8 +159,6 @@ const Index: React.FC = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
