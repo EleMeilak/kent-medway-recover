@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { symptomGroups, getRecommendations } from "@/utils/symptomUtils";
 import { findLocalServices } from "@/utils/serviceUtils";
-import { isValidUKPostcode, isInKentMedway, formatPostcode } from "@/utils/locationUtils";
+import { isValidUKPostcodeOrArea, isInKentMedway, formatPostcode } from "@/utils/locationUtils";
 import { PatientAssessment, RecommendationResource, ServiceLocation } from "@/types";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
@@ -54,7 +54,7 @@ const SymptomChecker: React.FC = () => {
       return false;
     }
     
-    if (!isValidUKPostcode(postcode)) {
+    if (!isValidUKPostcodeOrArea(postcode)) {
       setPostcodeError("Please enter a valid UK postcode or area");
       return false;
     }
